@@ -77,13 +77,13 @@ public struct EdgeMask: OptionSet {
   public static var right: EdgeMask  { return EdgeMask(rawValue: 1 << 3) }
   
   /// Defines a left and right edge
-  public static var leftAndRight: EdgeMask  { return left.union(.right) }
+  public static var leftAndRight: EdgeMask  { return [left, right] }
   
   /// Defines a top and bottom edge
-  public static var topAndBottom: EdgeMask { return top.union(.bottom) }
+  public static var topAndBottom: EdgeMask { return [top, bottom] }
   
   /// Defines all edges
-  public static var all: EdgeMask { return left.union(.right).union(.top).union(.bottom) }
+  public static var all: EdgeMask { return [left, right, top, bottom] }
 }
 
 /**
@@ -142,9 +142,9 @@ Converts an Axis to its associated sizing attribute
 
 - parameter axis: The axis to convert
 
-- returns: The associated NSLayoutAttribute
+- returns: The associated LayoutAttribute
 */
-func sizeAttribute(axis: Axis) -> NSLayoutAttribute {
+func sizeAttribute(axis: Axis) -> LayoutAttribute {
   switch axis {
   case .horizontal:
     return .width
@@ -158,9 +158,9 @@ Converts an Axis to its associated alignment attribute
 
 - parameter axis: The axis to convert
 
-- returns: The associated NSLayoutAttribute
+- returns: The associated LayoutAttribute
 */
-func centerAttribute(axis: Axis) -> NSLayoutAttribute {
+func centerAttribute(axis: Axis) -> LayoutAttribute {
   switch axis {
   case .horizontal:
     return .centerX
@@ -174,9 +174,9 @@ Converts an Edge to its associated edge attribute
 
 - parameter edge: The edge to convert
 
-- returns: The associated NSLayoutAttribute
+- returns: The associated LayoutAttribute
 */
-func edgeAttribute(edge: Edge) -> NSLayoutAttribute {
+func edgeAttribute(edge: Edge) -> LayoutAttribute {
   switch edge {
   case .top:
     return .top

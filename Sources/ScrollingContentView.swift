@@ -133,10 +133,10 @@ public class VerticalScrollingContentView: UIView {
     scrollView.pin(edges: .all, toView: self, margins: EdgeMargins())
     scrollView.addSubview(contentView)
     
-    let topAttribute: NSLayoutAttribute = type(of: self).scrollDirection == .vertical ? .top : .leading
-    let bottomAttribute: NSLayoutAttribute = type(of: self).scrollDirection == .vertical ? .bottom : .trailing
-    let leadingAttribute: NSLayoutAttribute = type(of: self).scrollDirection == .vertical ? .leading : .top
-    let trailingAttribute: NSLayoutAttribute = type(of: self).scrollDirection == .vertical ? .trailing : .bottom
+    let topAttribute: NSLayoutConstraint.Attribute = type(of: self).scrollDirection == .vertical ? .top : .leading
+    let bottomAttribute: NSLayoutConstraint.Attribute = type(of: self).scrollDirection == .vertical ? .bottom : .trailing
+    let leadingAttribute: NSLayoutConstraint.Attribute = type(of: self).scrollDirection == .vertical ? .leading : .top
+    let trailingAttribute: NSLayoutConstraint.Attribute = type(of: self).scrollDirection == .vertical ? .trailing : .bottom
     
     // the content view is constrained to the top and bottom of the scroll view
     addConstraint(to: scrollView, targetAttribute: topAttribute, fromContentViewAttribute: topAttribute)
@@ -147,8 +147,8 @@ public class VerticalScrollingContentView: UIView {
     addConstraint(to: self, targetAttribute: trailingAttribute, fromContentViewAttribute: trailingAttribute)
   }
   
-  private func addConstraint(to targetView: UIView, targetAttribute: NSLayoutAttribute, fromContentViewAttribute sourceAttribute: NSLayoutAttribute) {
-    let constraint = NSLayoutConstraint(item: contentView, attribute: sourceAttribute, relatedBy: NSLayoutRelation.equal, toItem: targetView, attribute: targetAttribute, multiplier: 1, constant: 0)
+  private func addConstraint(to targetView: UIView, targetAttribute: NSLayoutConstraint.Attribute, fromContentViewAttribute sourceAttribute: NSLayoutConstraint.Attribute) {
+    let constraint = NSLayoutConstraint(item: contentView, attribute: sourceAttribute, relatedBy: NSLayoutConstraint.Relation.equal, toItem: targetView, attribute: targetAttribute, multiplier: 1, constant: 0)
     targetView.addConstraint(constraint)
   }
   
