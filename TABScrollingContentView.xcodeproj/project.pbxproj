@@ -279,7 +279,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TABScrollingContentView-TABScrollingContentViewTests/Pods-TABScrollingContentView-TABScrollingContentViewTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TABScrollingContentView-TABScrollingContentViewTests/Pods-TABScrollingContentView-TABScrollingContentViewTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TABSwiftLayout/TABSwiftLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -288,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TABScrollingContentView-TABScrollingContentViewTests/Pods-TABScrollingContentView-TABScrollingContentViewTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TABScrollingContentView-TABScrollingContentViewTests/Pods-TABScrollingContentView-TABScrollingContentViewTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CC9C050708FD58CF6A204243 /* [CP] Check Pods Manifest.lock */ = {
