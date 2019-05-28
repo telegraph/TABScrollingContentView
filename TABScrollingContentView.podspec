@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.summary      = 'A scroll view whose content size is determined based on the auto layout constraints of its subviews.'
   s.source       = { :git => 'https://github.com/telegraph/TABScrollingContentView.git', :tag => s.version.to_s }
   s.source_files = 'Sources/**/*.swift'
-  s.dependency 'TABSwiftLayout', '3.0.1'
+  s.dependency :git => 'https://github.com/telegraph/TABSwiftLayout'
 end
